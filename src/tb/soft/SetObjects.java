@@ -18,17 +18,11 @@ public class SetObjects{
     }
 
     static void removeHashSElement(String name, String lastname, int dateofbirth){
-        for(Person person : hashSet){
-            if(person.getFirstName().equals(name) && person.getLastName().equals(lastname) && person.getBirthYear() == dateofbirth)
-                hashSet.remove(person);
-        }
+        hashSet.removeIf(person -> person.getFirstName().equals(name) && person.getLastName().equals(lastname) && person.getBirthYear() == dateofbirth);
     }
 
     static void removeTreeSElement(String name, String lastname, int dateofbirth){
-        for(Person person : treeSet){
-            if(person.getFirstName().equals(name) && person.getLastName().equals(lastname) && person.getBirthYear() == dateofbirth)
-                treeSet.remove(person);
-        }
+        treeSet.removeIf(person -> person.getFirstName().equals(name) && person.getLastName().equals(lastname) && person.getBirthYear() == dateofbirth);
     }
 
     static void displayHashSList(){

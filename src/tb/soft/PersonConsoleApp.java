@@ -284,16 +284,16 @@ public class PersonConsoleApp{
 	 *  pamiętanej w zmiennej currentPerson.
 	 */
 
-	void showCurrentPerson() {
+/*	void showCurrentPerson() {
 		showPerson(currentPerson);
-	}
+	}*/
 
 	/*
 	 * Metoda wyświetla w oknie konsoli dane osoby reprezentowanej
 	 * przez obiekt klasy Person
 	 */
 
-	static void showPerson(Person person) {
+/*	static void showPerson(Person person) {
 		StringBuilder sb = new StringBuilder();
 
 		if (person != null) {
@@ -305,7 +305,7 @@ public class PersonConsoleApp{
 		} else
 			sb.append( "Brak danych osoby\n" );
 		UI.printMessage( sb.toString() );
-	}
+	}*/
 
 	/*
 	 * Metoda wczytuje w konsoli dane nowej osoby, tworzy nowy obiekt

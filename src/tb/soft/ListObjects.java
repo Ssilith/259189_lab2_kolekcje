@@ -26,14 +26,14 @@ public class ListObjects {
     }
 
     static void displayArrayList(){
-        for(int i = 0; i < arrayList.size(); i++){
-            System.out.println(arrayList.get(i).getFirstName() + " " + arrayList.get(i).getLastName() + " " + arrayList.get(i).getBirthYear() + " " + arrayList.get(i).getJob());
+        for (Person person : arrayList) {
+            System.out.println(person.getFirstName() + " " + person.getLastName() + " " + person.getBirthYear() + " " + person.getJob());
         }
     }
 
     static void displayLinkedList(){
-        for(int i = 0; i < linkedList.size(); i++){
-            System.out.println(linkedList.get(i).getFirstName() + " " + linkedList.get(i).getLastName() + " " + linkedList.get(i).getBirthYear() + " " + linkedList.get(i).getJob());
+        for (Person person : linkedList) {
+            System.out.println(person.getFirstName() + " " + person.getLastName() + " " + person.getBirthYear() + " " + person.getJob());
         }
     }
 }

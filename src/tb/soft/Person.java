@@ -137,10 +137,6 @@ public class Person implements Comparable{
 		return job;
 	}
 
-	public void setJob(PersonJob job){
-		this.job = job;
-	}
-
 	public void setJob(String job_name) throws PersonException {
 		if (job_name == null || job_name.equals("")) {  // pusty łańcuch znaków oznacza stanowisko niezdefiniowane
 			this.job = PersonJob.UNKNOWN;
