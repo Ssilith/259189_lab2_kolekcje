@@ -56,7 +56,7 @@ public class PersonConsoleApp{
 				"3. HashSet \n" +
 				"4. TreeSet \n" +
 				"5. HashMap \n" +
-				"6 TreeMap");
+				"6. TreeMap");
 
 		Scanner scan = new Scanner(System.in);
 		int choice = scan.nextInt();
@@ -221,6 +221,9 @@ public class PersonConsoleApp{
 						System.out.println(" - data urodzenia: ");
 						Scanner data = new Scanner(System.in);
 						int date = data.nextInt();
+						/*System.out.println(" - praca: ");
+						Scanner praca = new Scanner(System.in);
+						String job = praca.nextLine();*/
 						MapObjects.removeHashMElement(name, lastname, date);
 						break;
 					}
@@ -237,6 +240,7 @@ public class PersonConsoleApp{
 					}
 				}
 			}
+
 			else if(choice == 6) {
 				switch (UI.enterInt(MENU + "==>> ")) {
 					case 1: {
@@ -273,6 +277,7 @@ public class PersonConsoleApp{
 					}
 				}
 			}
+
 			else
 				System.out.println("Wybrano zly numer");
 

@@ -1,8 +1,7 @@
 package tb.soft;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.TreeMap;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class MapObjects {
     static Map<Person, Integer> hashMap = new HashMap<>();
@@ -17,9 +16,12 @@ public class MapObjects {
     }
 
     static void removeHashMElement(String name, String lastname, int dateofbirth){
+
         for(Person person : hashMap.keySet()){
             if(person.getFirstName().equals(name) && person.getLastName().equals(lastname) && person.getBirthYear() == dateofbirth)
                 hashMap.remove(person);
+            else
+                System.out.println("Nie istnieje obiekt o podanych parametrach");
         }
     }
 
@@ -27,6 +29,8 @@ public class MapObjects {
         for(Person person : treeMap.keySet()){
             if(person.getFirstName().equals(name) && person.getLastName().equals(lastname) && person.getBirthYear() == dateofbirth)
                 treeMap.remove(person);
+            else
+                System.out.println("Nie istnieje obiekt o podanych parametrach");
         }
     }
 
