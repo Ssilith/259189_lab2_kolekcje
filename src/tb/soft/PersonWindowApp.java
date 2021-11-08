@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
-import java.util.Map;
 
 public class PersonWindowApp extends JFrame implements ActionListener {
 
@@ -17,6 +16,7 @@ public class PersonWindowApp extends JFrame implements ActionListener {
     JPasswordField passwordField = new JPasswordField(15);
 
     JButton login = new JButton("Login");
+    JButton reset = new JButton("Reset");
     JButton exit = new JButton("Cancel");
 
     JPanel panel = new JPanel();
@@ -28,6 +28,7 @@ public class PersonWindowApp extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
 
         login.addActionListener(this);
+        reset.addActionListener(this);
         exit.addActionListener(this);
 
         panel.add(IDLabel);
@@ -37,33 +38,45 @@ public class PersonWindowApp extends JFrame implements ActionListener {
         panel.add(passwordField);
 
         panel.add(login);
+        panel.add(reset);
         panel.add(exit);
 
         setContentPane(panel);
+        panel.setBackground(Color.WHITE);
         setVisible(true);
     }
 
-    static Map<String, String> hashMap = new HashMap<>();
+    HashMap<String, String> dane = new HashMap<>();
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object eventSource = e.getSource();
 
+        dane.put("John", "Smith");
+        dane.put("Adam", "File");
+        dane.put("Piotr", "Nowak");
+        dane.put("Szymon", "Kowalski");
+        dane.put("Radek", "Smok");
+        dane.put("Agata", "Rydz");
+
         String data = this.IDField.getText();
-        String data_2 = this.passwordField.getText();
+        String data_2 = new String(passwordField.getPassword());
 
         if (eventSource == login) {
-            if(!data.equals("") && !data_2.equals("")){
+            if (dane.containsKey(data) && dane.get(data).equals(data_2)){
                 panel.setBackground(Color.green);
-                //Jezeli jest takie samo ID to po wpisaniu innego hasła nadpisuje
-                hashMap.put(data, data_2);
             }
             else
                 panel.setBackground(Color.red);
         }
 
+        if (eventSource == reset) {
+            panel.setBackground(Color.WHITE);
+            IDField.setText("");
+            passwordField.setText("");
+        }
+
         if (eventSource == exit) {
-            //System.out.println(hashMap);
             System.exit(0);
         }
     }
