@@ -17,8 +17,8 @@ public class ListObjects {
         linkedList.add(person);
     }
 
-    static void removeArrayElement(int index){
-        arrayList.remove(index);
+    static void removeArrayElement(Person person){
+        arrayList.remove(person);
     }
 
     static void removeLinkedElement(int index){
