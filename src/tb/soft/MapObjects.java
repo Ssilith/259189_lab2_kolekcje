@@ -1,7 +1,6 @@
 package tb.soft;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 public class MapObjects {
     static Map<Person, Integer> hashMap = new HashMap<>();
