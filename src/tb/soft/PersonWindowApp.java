@@ -63,9 +63,8 @@ public class PersonWindowApp extends JFrame implements ActionListener {
         String data_2 = new String(passwordField.getPassword());
 
         if (eventSource == login) {
-            if (dane.containsKey(data) && dane.get(data).equals(data_2)){
+            if (dane.containsKey(data) && dane.get(data).equals(data_2))
                 panel.setBackground(Color.green);
-            }
             else
                 panel.setBackground(Color.red);
         }
